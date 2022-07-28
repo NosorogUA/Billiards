@@ -6,12 +6,14 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private LineRenderer _line;
     [SerializeField] private GameObject _mainBall;
-    [SerializeField]/*[Range(0,50)]*/ private float _forse;
+    [SerializeField]/*[Range(0,50)]*/ private float _power;
+
+
     // Start is called before the first frame update
    
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -29,5 +31,6 @@ public class GameManager : MonoBehaviour
         {
             _mainBall.GetComponent<Rigidbody>().velocity = direction * _forse;
         }
-    }
+    }*/
+
 }

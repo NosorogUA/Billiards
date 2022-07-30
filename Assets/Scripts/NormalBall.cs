@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NormalBall : MonoBehaviour
 {
-
+    private Vector3 _direction;
     protected Vector3 Startpos;
     protected bool ResetIt;
 
@@ -13,24 +13,10 @@ public class NormalBall : MonoBehaviour
     {
         Startpos = transform.position;
     }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-
-        if (transform.position.y < 0.01f)
-            gameObject.SetActive(false);
-
-        if (ResetIt)
-        {
-            ResetIt = false;
-            transform.position = Startpos;
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-        }
-    }
-
+       
     public void ResetBall()
     {
-        ResetIt = true;
+        transform.position = Startpos;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 }

@@ -20,7 +20,7 @@ public class JoysticAreaComponent : myOnScreenStick, IPointerDownHandler, IPoint
         _area.GetComponent<RectTransform>().anchoredPosition = PointerStartPos;
         _joystic.GetComponent<myOnScreenStick>().startPose(PointerStartPos);
         _laser.LaserSwitch(true);
-        _tline.TrajectorySwitch(false);
+       // _tline.TrajectorySwitch(false);
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -40,7 +40,7 @@ public class JoysticAreaComponent : myOnScreenStick, IPointerDownHandler, IPoint
     {
         _laser.LaserSwitch(false);
         _tline.HideLine();
-        _tline.TrajectorySwitch(false);
+       // _tline.TrajectorySwitch(false);
         _joystic.GetComponent<myOnScreenStick>().OnPointerUp();
         
     }

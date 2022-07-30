@@ -11,7 +11,7 @@ public class Trajectory : MonoBehaviour
     }
     public void RenderLine(Vector3 endpoint)
     {
-        lr.enabled = true;
+       
         lr.positionCount = 2;
         Vector3[] points = new Vector3[2];
         points[0] = transform.position;
@@ -21,12 +21,16 @@ public class Trajectory : MonoBehaviour
     }
     public void HideLine()
     {
-        lr.enabled = false;
+        
         lr.positionCount = 2;
         Vector3[] points = new Vector3[2];
         points[0] = transform.position;
         points[1] = transform.position;
 
         lr.SetPositions(points);
+    }
+    public void TrajectorySwitch(bool status)
+    {
+        lr.enabled = status;
     }
 }

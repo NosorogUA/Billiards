@@ -10,8 +10,7 @@ public class EnterTrigger : MonoBehaviour
     [SerializeField] private float _usedOffDelay = 0.5f;
     [SerializeField] private bool _isUsed;
     [SerializeField] private bool _ignorUsed;
-    //[SerializeField] private UnityEvent _enterTrigger;
-    
+  
     [SerializeField] private EnterEvent _actionEnter;
     
     private void Awake()

@@ -16,12 +16,10 @@ public class JoysticAreaComponent : myOnScreenStick, IPointerDownHandler, IPoint
 
     public void OnPointerDown(PointerEventData eventData)
     {
-       
         PointerStartPos = transform.parent.InverseTransformPoint(eventData.pointerCurrentRaycast.worldPosition);
         _area.GetComponent<RectTransform>().anchoredPosition = PointerStartPos;
         _joystic.GetComponent<myOnScreenStick>().startPose(PointerStartPos);
         _laser.LaserSwitch(true);
-       // _tline.TrajectorySwitch(false);
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -32,7 +30,6 @@ public class JoysticAreaComponent : myOnScreenStick, IPointerDownHandler, IPoint
         var position1 = transform.parent.InverseTransformPoint(eventData.pointerCurrentRaycast.worldPosition);
         Vector3 delta = position1 - PointerStartPos;
         delta = Vector2.ClampMagnitude(delta, movementRange);
-        //Debug.Log(delta);
         _tline.RenderLine(delta/10);
         _laser.SetDirection(delta);
         _joystic.GetComponent<myOnScreenStick>().OnDragPoint(delta);
@@ -43,10 +40,8 @@ public class JoysticAreaComponent : myOnScreenStick, IPointerDownHandler, IPoint
        
         _laser.LaserSwitch(false);
         _tline.HideLine();
-       // _tline.TrajectorySwitch(false);
         _joystic.GetComponent<myOnScreenStick>().OnPointerUp();
-        //ReloadLevelComponent.RL.StartBalls();
-        
+      
     }
    
 

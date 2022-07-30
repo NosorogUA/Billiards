@@ -16,12 +16,8 @@ public class MainBall : NormalBall
     protected override void LateUpdate()
     {
         base.LateUpdate();
-        SwitchControl(_stoped);
+        _joystik.SetActive(_stoped);
     }
-    private void SwitchControl(bool status)
-    {
-        _joystik.SetActive(status);
-        _joystik.GetComponent<JoysticAreaComponent>().enabled = status;
-    }
+   
 
 }

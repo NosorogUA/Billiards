@@ -88,7 +88,6 @@ public class MyLaser : MonoBehaviour
         Gizmos.color = _isBall ? Color.green : Color.red;
         Gizmos.DrawSphere(new Vector3(_hitPoint.x, transform.position.y, _hitPoint.z), _collider.radius * 2.1f);
        
-        
     }
 #endif
 }

@@ -27,7 +27,7 @@ public class DragNSoot : MonoBehaviour
                 Transform objectHit = hit.transform;
                 startPoint = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 startPoint.y = 15;
-                Debug.Log($"Click start pos: {startPoint}");
+                //Debug.Log($"Click start pos: {startPoint}");
             }
            
             
@@ -38,7 +38,7 @@ public class DragNSoot : MonoBehaviour
 
                 force = new Vector3(Mathf.Clamp(startPoint.x - endPoint.x, minPower.x, maxPower.x), 0, Mathf.Clamp(startPoint.z - endPoint.z, minPower.z, maxPower.z));
                 rb.AddForce(force * power, ForceMode.Impulse);
-                Debug.Log($"Click end pos: {endPoint}");
+                //Debug.Log($"Click end pos: {endPoint}");
             }
         }
             

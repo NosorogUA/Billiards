@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 124514528}
   m_Layer: 0
   m_Name: MainBall
-  m_TagString: MainBall
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e551cbab54ba8e4e816ac318da38e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 25
+  power: 15
   rb: {fileID: 124514523}
   _tline: {fileID: 124514526}
   minPower: {x: -50, y: 0, z: -50}
@@ -459,7 +459,7 @@ MonoBehaviour:
   location: {x: 0, y: 0, z: 0}
   _layermask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 256
   lr: {fileID: 1985124896}
   _hitBall: {fileID: 621961153}
 --- !u!1 &176928325
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 176928326}
   - component: {fileID: 176928328}
   - component: {fileID: 176928327}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: corner1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -509,7 +509,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Ball
   _usedOffDelay: 0.5
-  Collectable: 0
   _isUsed: 0
   _ignorUsed: 0
   _actionEnter:
@@ -981,9 +980,9 @@ GameObject:
   - component: {fileID: 429550919}
   - component: {fileID: 429550918}
   - component: {fileID: 429550917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bumper1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1665,9 +1664,9 @@ GameObject:
   - component: {fileID: 994544628}
   - component: {fileID: 994544627}
   - component: {fileID: 994544626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bumper3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1858,7 +1857,7 @@ GameObject:
   - component: {fileID: 1106548388}
   - component: {fileID: 1106548390}
   - component: {fileID: 1106548389}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: corner1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -1894,7 +1893,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Ball
   _usedOffDelay: 0.5
-  Collectable: 0
   _isUsed: 0
   _ignorUsed: 0
   _actionEnter:
@@ -1950,9 +1948,9 @@ GameObject:
   - component: {fileID: 1291296323}
   - component: {fileID: 1291296322}
   - component: {fileID: 1291296321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bumper4
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2296,9 +2294,9 @@ GameObject:
   - component: {fileID: 1436723732}
   - component: {fileID: 1436723731}
   - component: {fileID: 1436723730}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bumper6
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2521,7 +2519,7 @@ GameObject:
   - component: {fileID: 1518556163}
   - component: {fileID: 1518556165}
   - component: {fileID: 1518556164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: side1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -2557,7 +2555,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Ball
   _usedOffDelay: 0.5
-  Collectable: 0
   _isUsed: 0
   _ignorUsed: 0
   _actionEnter:
@@ -2613,9 +2610,9 @@ GameObject:
   - component: {fileID: 1649413032}
   - component: {fileID: 1649413031}
   - component: {fileID: 1649413030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bumper5
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2709,7 +2706,7 @@ GameObject:
   - component: {fileID: 1714632768}
   - component: {fileID: 1714632770}
   - component: {fileID: 1714632769}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: side2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -2745,7 +2742,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Ball
   _usedOffDelay: 0.5
-  Collectable: 0
   _isUsed: 0
   _ignorUsed: 0
   _actionEnter:
@@ -2905,7 +2901,7 @@ GameObject:
   - component: {fileID: 1963362843}
   - component: {fileID: 1963362845}
   - component: {fileID: 1963362844}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: corner1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -2941,7 +2937,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Ball
   _usedOffDelay: 0.5
-  Collectable: 0
   _isUsed: 0
   _ignorUsed: 0
   _actionEnter:
@@ -3070,17 +3065,17 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.8553467
-        inSlope: 0
-        outSlope: 0
+        time: 0.0670391
+        value: 0.81761086
+        inSlope: -1.6020857
+        outSlope: -1.6020857
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.1630094
       - serializedVersion: 3
         time: 1
-        value: 0.13835382
+        value: 0.3144555
         inSlope: -0.76475894
         outSlope: -0.76475894
         tangentMode: 0
@@ -3292,6 +3287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2022673500}
+  - component: {fileID: 2022673501}
   m_Layer: 0
   m_Name: '####Table###'
   m_TagString: Untagged
@@ -3318,6 +3314,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2022673501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022673499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473e8cbfe06a1fa4ab84ba130b9d1f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _count: 0
 --- !u!1 &2071286946
 GameObject:
   m_ObjectHideFlags: 0
@@ -3330,9 +3339,9 @@ GameObject:
   - component: {fileID: 2071286950}
   - component: {fileID: 2071286949}
   - component: {fileID: 2071286948}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bumper2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3426,7 +3435,7 @@ GameObject:
   - component: {fileID: 2078286598}
   - component: {fileID: 2078286600}
   - component: {fileID: 2078286599}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: corner1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -3462,7 +3471,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Ball
   _usedOffDelay: 0.5
-  Collectable: 0
   _isUsed: 0
   _ignorUsed: 0
   _actionEnter:

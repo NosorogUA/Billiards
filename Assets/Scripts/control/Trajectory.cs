@@ -18,14 +18,7 @@ public class Trajectory : MonoBehaviour
         lr.SetPositions(points);
         TrajectorySwitch(true);
     }
-    public void RemderSecondaryLine(Vector3 endpoint)
-    {
-        points[0] = transform.position;
-        points[1] = endpoint*3;
-
-        lr.SetPositions(points);
-        TrajectorySwitch(true);
-    }
+   
     public void HideLine()
     {
         points[0] = transform.position;

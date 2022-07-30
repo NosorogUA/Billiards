@@ -8,7 +8,6 @@ public class EnterTrigger : MonoBehaviour
 {
     [SerializeField] private string _tag;
     [SerializeField] private float _usedOffDelay = 0.5f;
-    [SerializeField] private bool Collectable;
     [SerializeField] private bool _isUsed;
     [SerializeField] private bool _ignorUsed;
     //[SerializeField] private UnityEvent _enterTrigger;

@@ -12,6 +12,8 @@ public class MyLaser : MonoBehaviour
     [SerializeField] private LineRenderer lr;
     [SerializeField] private GameObject _hitBall;
     Vector3[] points = new Vector3[3];
+    private bool _isBall;
+
     private void Awake()
     {
         _collider = GetComponent<SphereCollider>();
@@ -35,32 +37,46 @@ public class MyLaser : MonoBehaviour
         {
             _hitPoint = hits.point+(_collider.radius*2)*hits.normal;
             _hitBall.transform.position = points[1] = new Vector3 (_hitPoint.x, transform.position.y, _hitPoint.z);
-            
+
+            var target = hits.collider.gameObject.transform.position;
+            RaycastHit hits2;
+            Debug.Log("Tag of hit object : " + hits.collider.gameObject.tag);
             if (hits.collider.gameObject.tag == "Ball")
             {
-                RaycastHit hits2;
-                var target = hits.collider.gameObject.transform.position;
+                _isBall = true;
+
                 var heading = _hitPoint - target;
-                var distance = heading.magnitude/5;
+                var distance = heading.magnitude;
                 var dir = heading / distance;
                 dir.y = 0;
                if( Physics.Raycast(points[1], -dir, out hits2, Mathf.Infinity, _layermask))
                 {
-                    Debug.Log(dir);
+                    //Debug.Log(dir);
                     Debug.DrawRay(points[1], -dir, Color.yellow);
-                    var targetForLine = points[1] + (-dir * 2);
+                    var targetForLine = points[1] + (-dir * 10);
                     points[2] = targetForLine;
                 }
-
-               //Debug.DrawRay(points[1], -dir, Color.yellow);
-               // points[2] = targetForLine;// target;
-                // hits.collider.gameObject.GetComponent<Trajectory>().RemderSecondaryLine(hits.point);
                
             }
-            else
+            else 
             {
-                points[2] = points[1];
+                _isBall = false;
+
+                var heading = _hitPoint - transform.position;
+                var distance = heading.magnitude;
+                var dir = heading / distance;
+                dir.y = 0;
+                if (Physics.Raycast(points[0], dir, out hits2, Mathf.Infinity, _layermask))
+                {
+                    //Debug.Log(dir);
+                    Debug.DrawRay(points[0], dir, Color.yellow);
+                    var reflDir = Vector3.Reflect(dir, hits2.normal);
+                    var targetForLine = points[1] + (reflDir * 10);
+                    points[2] = targetForLine;
+                }
+               
             }
+            
 
             lr.SetPositions(points);
         }
@@ -69,10 +85,9 @@ public class MyLaser : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        //Gizmos.color = _isGrounded ? Color.green : Color.red;
-        Gizmos.color = Color.green;
-        //Gizmos.DrawSphere(new Vector3(_hitPoint.x, transform.position.y, _hitPoint.z), _collider.radius * 2.1f);
-        // Gizmos.DrawSphere(points[2], _collider.radius * 2.1f);
+        Gizmos.color = _isBall ? Color.green : Color.red;
+        Gizmos.DrawSphere(new Vector3(_hitPoint.x, transform.position.y, _hitPoint.z), _collider.radius * 2.1f);
+       
         
     }
 #endif

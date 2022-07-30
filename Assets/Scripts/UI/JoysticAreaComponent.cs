@@ -30,7 +30,7 @@ public class JoysticAreaComponent : myOnScreenStick, IPointerDownHandler, IPoint
         var position1 = transform.parent.InverseTransformPoint(eventData.pointerCurrentRaycast.worldPosition);
         Vector3 delta = position1 - PointerStartPos;
         delta = Vector2.ClampMagnitude(delta, movementRange);
-        Debug.Log(delta);
+        //Debug.Log(delta);
         _tline.RenderLine(delta/10);
         _laser.SetDirection(delta);
         _joystic.GetComponent<myOnScreenStick>().OnDragPoint(delta);

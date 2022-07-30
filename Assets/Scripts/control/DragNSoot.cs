@@ -18,6 +18,7 @@ public class DragNSoot : MonoBehaviour
    
     private void Update()
     {
+        if (!MainBall.M._stoped) return;
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))

@@ -7,21 +7,48 @@ public class NormalBall : MonoBehaviour
     protected Vector3 _direction;
     protected Vector3 Startpos;
     protected bool ResetIt;
+    public bool _stoped;
+    protected Rigidbody _rb;
+
 
     // Use this for initialization
     protected virtual void Start()
     {
         Startpos = transform.position;
+        _rb = GetComponent<Rigidbody>();
     }
-    public void  StpoVel()
+
+    protected virtual void LateUpdate()
     {
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+        if (_rb.velocity.x <= 1 && _rb.velocity.x >= -1)
+        {
+            if (_rb.velocity.z <= 1 && _rb.velocity.z >= -1)
+            {
+                StopBall();
+            }
+            else
+            {
+                _stoped = false;
+        }
+        }
+        else
+        {
+            _stoped = false;
+        }
+
+    }
+
+    private void StopBall()
+    {
+        _rb.velocity = Vector3.zero;
+        _stoped = true;
     }
     [ContextMenu("Reset")]
     public void ResetBall()
     {
         gameObject.SetActive(true);
         transform.position = Startpos;
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        _rb.velocity = Vector3.zero;
     }
 }

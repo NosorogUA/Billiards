@@ -26,6 +26,13 @@ public class ReloadLevelComponent : MonoBehaviour
         _count -= 1;
         checkCount();
     }
+    /*public void StartBalls()
+    {
+        foreach (var ball in _activeBalls)
+        {
+            ball._stoped = false;
+        }
+    }*/
 
     private void checkCount()
     {
